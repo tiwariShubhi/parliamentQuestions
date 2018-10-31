@@ -1,0 +1,3 @@
+Trending topics : 
+	1. tried pos tagging -  but most words are jsut nouns - so might drop this step
+		- stop word and puntuations removal is helpful here
