@@ -2,11 +2,10 @@
 # Created by : Shubhi Tiwari
 # Date : 31 Oct, 2018
 # -------------------------------------------------------------------------------------------------------
-# Description : take question_type and finds the most trending topics in the rajyasabha over 10 years
-#               across different ministries
+# Description : take question_title and finds the most trending topics in the rajyasabha over 10 years
 #
-# Input :
-# Output :
+# Input : Rajsabhya question answer data for past 10 years
+# Output : wordcloud and graph of most trending topics ob=ver the past 10 years
 #
 # --------------------------------------------------------------------------------------------------------
 from collections import Counter
@@ -27,7 +26,7 @@ wordCloudTerms = 'D:/m.tech/Sem 3/DMG/Project/parliamentQuestions/Results/topics
 stopWords = nltk.corpus.stopwords.words('english') + list(string.punctuation);
 fileList = [line.rstrip('\n') for line in open(fileNamesFile)]
 portStem = nltk.stem.PorterStemmer();
-#non ministry wise / overall
+# non ministry wise / overall
 quesMinWise = []
 words= []
 for file in fileList:
