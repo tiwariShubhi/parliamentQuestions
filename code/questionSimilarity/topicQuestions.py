@@ -16,7 +16,7 @@ import re
 path = 'D:/m.tech/Sem 3/DMG/Project/parliamentQuestions/rajyasabha/'
 # file containing name of files to be processed
 fileNamesFile = path + 'qSimFileNames.txt'
-topic = 'pmry'
+topic = 'development'
 pre = 'rajyasabha_questions_and_answers_'
 yearLen = 4
 first = ''
@@ -46,4 +46,4 @@ for file in fileList:
         print(year + " "+ str(c))
 
 with open(path+'similarity/data_'+topic+'_'+first+'_to_'+last+'.json','w') as jsonfile:
-    json.dump(questions, jsonfile,ensure_ascii=False)
+    json.dump(questions, jsonfile,encoding='latin-1')

@@ -19,8 +19,8 @@ from scipy.misc import imread
 import matplotlib.pyplot as plt
 
 path = 'D:/m.tech/Sem 3/DMG/Project/parliamentQuestions/rajyasabha/'
-fileNamesFile = 'D:/m.tech/Sem 3/DMG/Project/parliamentQuestions/rajyasabha/fileNames.txt'
-outFile = 'D:/m.tech/Sem 3/DMG/Project/parliamentQuestions/Results/trendTopics_10years.txt'
+fileNamesFile = 'D:/m.tech/Sem 3/DMG/Project/parliamentQuestions/rajyasabha/fileN.txt'
+outFile = 'D:/m.tech/Sem 3/DMG/Project/parliamentQuestions/Results/freqOutput/trendTopics2017.txt'
 wordCloudTerms = 'D:/m.tech/Sem 3/DMG/Project/parliamentQuestions/Results/topics.txt'
 
 stopWords = nltk.corpus.stopwords.words('english') + list(string.punctuation);
@@ -69,53 +69,53 @@ for vv in sorted_topics:
     fp.write(vv[0]+","+str(vv[1])+"\n")
 
 fp.close()
-
-fp = open(wordCloudTerms,'w')
-for w in words:
-    fp.write(w+" ")
-fp.close()
-
-fp = open(wordCloudTerms).read()
-print "making cloud..."
-# wc = wordcloud.WordCloud(collocations=False,stopwords=wordcloud.STOPWORDS,background_color='white',width=9000,height=4000).generate(fp)
 #
-# plt.imshow(wc)
-# plt.axis('off')
+# fp = open(wordCloudTerms,'w')
+# for w in words:
+#     fp.write(w+" ")
+# fp.close()
+#
+# fp = open(wordCloudTerms).read()
+# print "making cloud..."
+# # wc = wordcloud.WordCloud(collocations=False,stopwords=wordcloud.STOPWORDS,background_color='white',width=9000,height=4000).generate(fp)
+# #
+# # plt.imshow(wc)
+# # plt.axis('off')
+# # plt.show()
+#
+#
+# # generating a histogram of trending words
+# n = 20
+# counts = dict(Counter(words).most_common(n))
+# print len(words)
+# print counts
+# # for k,v in counts.iteritems():
+# #     counts[k] = math.log10(v)
+#
+# print "counter done"
+# labels, values = zip(*counts.items())
+#
+# # sort your values in descending order
+# indSort = np.argsort(values)[::-1]
+# print "sorted"
+#
+# # rearrange your data
+# labels = np.array(labels)[indSort]
+# values = np.array(values)[indSort]
+#
+# indexes = np.arange(len(labels))
+#
+# bar_width = 0.35
+#
+# print "plotting"
+# plt.bar(indexes, values)
+#
+# # add labels
+# plt.xticks(indexes + bar_width, labels)
+# plt.ylabel("Word Freqency")
+# plt.xlabel("Top 20 words")
 # plt.show()
-
-
-# generating a histogram of trending words
-n = 20
-counts = dict(Counter(words).most_common(n))
-print len(words)
-print counts
-# for k,v in counts.iteritems():
-#     counts[k] = math.log10(v)
-
-print "counter done"
-labels, values = zip(*counts.items())
-
-# sort your values in descending order
-indSort = np.argsort(values)[::-1]
-print "sorted"
-
-# rearrange your data
-labels = np.array(labels)[indSort]
-values = np.array(values)[indSort]
-
-indexes = np.arange(len(labels))
-
-bar_width = 0.35
-
-print "plotting"
-plt.bar(indexes, values)
-
-# add labels
-plt.xticks(indexes + bar_width, labels)
-plt.ylabel("Word Freqency")
-plt.xlabel("Top 20 words")
-plt.show()
-
+#
 #
 # # combining for all years and taking ministry wise
 # quesMinWise = {}
