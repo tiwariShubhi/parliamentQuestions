@@ -120,6 +120,8 @@ def cluster_data(word_dictionary, data):
 
 print 'read_data called'
 year, data = read_data('/home/kb/PycharmProjects/DMG_Project2/parliamentQuestions/rajyasabha/rajyasabha_questions_and_answers_2010.csv')
+print data
+
 
 print 'vectorise called'
 word_dictionary, vectorised_data = vectorise(data)
